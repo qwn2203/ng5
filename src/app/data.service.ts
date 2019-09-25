@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Entidades } from './entidades'; 
 import { Observable } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { _throw as throwError } from 'rxjs/Observable/throw';/*
+import { _throw as throwError } from 'rxjs/Observable/throw';
+/*
 @Injectable({
  providedIn: 'root'
 })
@@ -14,10 +15,11 @@ export class DataService {/*
    this.goals.next(goal);
  }
 */
-  // Define API
+  // Define API 
   apiURL = 'https://dinosaurio1.appspot.com';
   //apiURL = 'http://localhost:10010'; 
-  constructor(private http: HttpClient) { } // Http Options
+  constructor(private http: HttpClient) { } 
+  // Http Options
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -28,7 +30,8 @@ export class DataService {/*
         retry(1),
         catchError(this.handleError)
       )
-  }  // Error handling
+  }  
+  // Error handling
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
