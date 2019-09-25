@@ -1,10 +1,11 @@
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+
+//import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Entidades } from './entidades'; 
 import { Observable } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { _throw as throwError } from 'rxjs/Observable/throw';
+import { _throw as throwError } from 'rxjs/observable/throw';
 /*
 @Injectable({
  providedIn: 'root'
@@ -24,13 +25,14 @@ export class DataService {/*
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
-  } getEntidades(): Observable<Entidades> {
+  } 
+  getEntidades(): Observable<Entidades> {
     return this.http.get<Entidades>(this.apiURL + '/entidades')
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
-  }  
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+   } 
   // Error handling
   handleError(error) {
     let errorMessage = '';
@@ -39,7 +41,7 @@ export class DataService {/*
       errorMessage = error.error.message;
     } else {
       // Get server-side error
-      errorMessage = Error Code: ${ error.status } \nMessage: ${ error.message };
+      errorMessage = 'Error Code: ${ error.status } \nMessage: ${ error.message }';
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
