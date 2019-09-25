@@ -11,8 +11,12 @@ import { _throw as throwError } from 'rxjs/observable/throw';
  providedIn: 'root'
 })
 */@Injectable()
-export class DataService {/*
- private goals = new BehaviorSubject<any>(['Be the best father', 'Be fitness', 'Be a great Swimmer']);  goal = this.goals.asObservable();  constructor() { }  changeGoal(goal)  {
+export class DataService {
+  /*
+ private goals = new BehaviorSubject<any>(['Be the best father', 'Be fitness', 'Be a great Swimmer']);  
+ goal = this.goals.asObservable();  
+ constructor() { }  
+ changeGoal(goal)  {
    this.goals.next(goal);
  }
 */
@@ -51,6 +55,7 @@ export class DataService {/*
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
