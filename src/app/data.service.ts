@@ -31,7 +31,7 @@ export class DataService {
     })
   } 
   getEntidades(): Observable<Entidades> {
-    return this.http.get<Entidades>(this.apiURL + '/entidades')
+    return this.http.get<Entidades>(this.apiURL + '/gamesystems')
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -45,7 +45,7 @@ export class DataService {
       errorMessage = error.error.message;
     } else {
       // Get server-side error
-      errorMessage = 'Error Code: ${ error.status } \nMessage: ${ error.message }';
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
