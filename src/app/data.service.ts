@@ -1,23 +1,23 @@
+import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Entidades } from './entidades'; import { Observable } from 'rxjs';
+import { Entidades } from './entidades'; 
+import { Observable } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { _throw as throwError } from 'rxjs/observable/throw';
-
-/*
+import { _throw as throwError } from 'rxjs/Observable/throw';/*
 @Injectable({
  providedIn: 'root'
 })
 */@Injectable()
 export class DataService {/*
  private goals = new BehaviorSubject<any>(['Be the best father', 'Be fitness', 'Be a great Swimmer']);  goal = this.goals.asObservable();  constructor() { }  changeGoal(goal)  {
-   this.goals.next(goal);*/
+   this.goals.next(goal);
  }
-
+*/
   // Define API
-  apiURL = 'https://upheld-castle-251021.appspot.com';
-  //apiURL = 'http://localhost:10010'; constructor(private http: HttpClient) { } // Http Options
+  apiURL = 'https://dinosaurio1.appspot.com';
+  //apiURL = 'http://localhost:10010'; 
+  constructor(private http: HttpClient) { } // Http Options
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -42,9 +42,11 @@ export class DataService {/*
     return throwError(errorMessage);
   }
 }
+/*
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
-import { DataService } from '../data.service'; @Component({
+import { DataService } from '../data.service';
+@Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -92,4 +94,4 @@ export class HomeComponent implements OnInit {
     this.itemCount = this.goals.length;
     //this._data.changeGoal(this.goals);  }
   }
-}
+}*/
